@@ -17,6 +17,8 @@ GameObject:
   - component: {fileID: 8610554788533703975}
   - component: {fileID: 7441608742308099617}
   - component: {fileID: 5177401226062621587}
+  - component: {fileID: 79152638984835271}
+  - component: {fileID: 1799552406840976734}
   m_Layer: 0
   m_Name: PlayerCharactor
   m_TagString: Untagged
@@ -140,6 +142,8 @@ MonoBehaviour:
   - {fileID: 8610554788533703975}
   - {fileID: 7441608742308099617}
   - {fileID: 5177401226062621587}
+  - {fileID: 79152638984835271}
+  - {fileID: 1799552406840976734}
   ForceRemoteRenderTimeframe: 0
 --- !u!143 &528775647581131750
 CharacterController:
@@ -236,3 +240,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerColor
   MeshRenderer: {fileID: 2652670643459817458}
   _NetworkedColor: {r: 0, g: 0, b: 0, a: 0}
+--- !u!114 &79152638984835271
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167384739514768504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d728dcf94b39d48488b0d6cfbd6b050d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Health
+  _NetworkedHealth: 100
+--- !u!114 &1799552406840976734
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167384739514768504}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cbb608fe1a1a884dadef121e0fd9fdc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::RaycastAttack
+  Damage: 10
+  PlayerMovement: {fileID: 7441608742308099617}
