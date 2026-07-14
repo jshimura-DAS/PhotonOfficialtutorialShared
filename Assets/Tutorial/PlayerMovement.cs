@@ -63,8 +63,8 @@ public class PlayerMovement : NetworkBehaviour
         {
             _velocity.y += JumpForce;
         }
-        _controller.Move(move + _velocity*Runner.DeltaTime);
-   
+        _controller.Move(move + _velocity * Runner.DeltaTime);
+
         if (move != Vector3.zero)
         {
             gameObject.transform.forward = move;

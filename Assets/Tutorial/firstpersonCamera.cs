@@ -7,7 +7,7 @@ public class FirstPersonCamera : MonoBehaviour
     public float MouseSensitivity = 10f;
 
     private float _verticalRotation;
-    private float _horizontalRotation;
+    private float _horizontalRotation = 0.0f;
     private Keyboard keyboard;
 
     private void Awake()
@@ -18,11 +18,14 @@ public class FirstPersonCamera : MonoBehaviour
     {
         if (Target == null)
             return;
-
+        keyboard = Keyboard.current;
         transform.position = Target.position;
 
-        float mouseX = (keyboard.dKey.isPressed ? 1 : 0) - (keyboard.aKey.isPressed ? 1 : 0);
-        float mouseY = (keyboard.wKey.isPressed ? 1 : 0) - (keyboard.sKey.isPressed ? 1 : 0);
+        // マウスの移動量を Vector2 で直接取得
+        Vector2 mouseDelta = Mouse.current.delta.ReadValue();
+
+        float mouseX = mouseDelta.x;
+        float mouseY = mouseDelta.y;
 
         _verticalRotation -= mouseY * MouseSensitivity;
         _verticalRotation = Mathf.Clamp(_verticalRotation, -70f, 70f);
